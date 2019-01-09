@@ -1,9 +1,9 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Principal {
@@ -11,12 +11,12 @@ public class Principal {
 	public static void main(String[] args) {
 		
 		//String nome = "/home/alexandre/Downloads/QPczEdsF.json";
-		String nome = "/home/alexandre/Downloads/arRRW8nS.json";
+		String nome = "/home/alexandre/Downloads/sgo8GdIi.json";
 	    String branch = "2016SD-0228-fase-2";
 	    
-	    List<String> encontrados = null; 
+	    ArrayList<String> encontrados = new ArrayList<>(); 
 	 
-	    System.out.printf("\nConteúdo do arquivo texto:\n");
+	    System.out.printf("\nConteúdo do arquivo texto\n");
 	    try {
 	      FileReader arq = new FileReader(nome);
 	      BufferedReader lerArq = new BufferedReader(arq);
@@ -26,9 +26,18 @@ public class Principal {
 	    //instancia um novo JSONObject passando a string como entrada
 	    JSONObject my_obj = new JSONObject(linha);
 
-	    String titulo = my_obj.getString("desc");
+	    encontrados.add(my_obj.getString("actions"));
+	    encontrados.add(my_obj.getString("name"));
+	    encontrados.add(my_obj.getString("name"));
+	    encontrados.add(my_obj.getString("name"));
+	    encontrados.add(my_obj.getString("name"));
+	    encontrados.add(my_obj.getString("name"));
+	    encontrados.add(my_obj.getString("name"));
+	    encontrados.add(my_obj.getString("name"));
+	    encontrados.add(my_obj.getString("name"));
 	    
-	    System.out.println(titulo);
+	    
+	    System.out.println(encontrados.toString());
 	    
 	    } catch (IOException e) {
 	        System.err.printf("Erro na abertura do arquivo: %s.\n",

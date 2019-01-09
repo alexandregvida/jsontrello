@@ -1,24 +1,48 @@
-import java.io.IOException;
-import java.io.StringWriter;
+import java.io.FileReader;
+import java.io.Reader;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.util.Iterator;
+
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 
 public class teste {
 
-	   public static void main(String[] args) throws IOException {
-			
-		      JSONObject obj = new JSONObject();
+	public static void main(String[] args) throws IOException, ParseException {
+		
+		//String nome = "/home/alexandre/Downloads/QPczEdsF.json";
+		String nome = "/home/alexandre/Downloads/sgo8GdIi.json";
+		
+		JSONParser parser = new JSONParser();
+		Reader reader = new FileReader(nome);
 
-		      obj.put("name","foo");
-		      obj.put("num",new Integer(100));
-		      obj.put("balance",new Double(1000.21));
-		      obj.put("is_vip",new Boolean(true));
+		Object jsonObj = parser.parse(reader);
 
-		      StringWriter out = new StringWriter();
-		      obj.writeJSONString(out);
-		      
-		      String jsonText = out.toString();
-		      System.out.print(jsonText);
-		   }
+		JSONObject jsonObject = (JSONObject) jsonObj;
 
+		String name = (String) jsonObject.get("id");
+		System.out.println("ID = " + name);
+
+//		String age = (String) jsonObject.get("name");
+//		System.out.println("Name = " + age);
+		
+//		String desc = (String) jsonObject.get("descData");
+//		System.out.println("desc = " + desc);
+
+		JSONArray cities = (JSONArray) jsonObject.get("actions");
+		@SuppressWarnings("unchecked")
+		Iterator<String> it = cities.iterator();
+		while (it.hasNext()) {
+			System.out.println("actions = " + it.next());
+		}
+		reader.close();
+	}
+	
 }
