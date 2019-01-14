@@ -16,11 +16,11 @@ public class teste2 {
 		String nome = "/home/alexandre/gitHub/jsontrello/Files/QPczEdsF.json";
 
 		// DEV
-		//String nome = "/home/alexandre/gitHub/jsontrello/Files/sgo8GdIi.json";
+		//String nome = "/home/alexandre/gitHub/jsontrello/Files/sgo8GdIi2.json";
 
-		String branchs = "2016SD-0134-fase-2";
+		String branchs = "2018SD-0124";
 		//String branchs = "2018SD-0044-frente-11";
-	//	List<acoesBranch> acoes = new ArrayList<acoesBranch>();
+	    //List<acoesBranch> acoes = new ArrayList<acoesBranch>();
 		acoesBranch teste = new acoesBranch();
 
 		JSONParser parser = new JSONParser();
