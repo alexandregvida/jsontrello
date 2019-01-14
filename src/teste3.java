@@ -8,7 +8,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class teste2 {
+public class teste3 {
 
 	public static void main(String[] args) throws IOException, ParseException {
 
@@ -18,10 +18,11 @@ public class teste2 {
 		// DEV
 		//String nome = "/home/alexandre/gitHub/jsontrello/Files/sgo8GdIi2.json";
 
-		//String branchs = "2018SD-0124";
+		//String branchs = "2018SD-0121";
 		String branchs = "2018SD-0044-frente-11";
 	    //List<acoesBranch> acoes = new ArrayList<acoesBranch>();
 		acoesBranch teste = new acoesBranch();
+		teste.setBranch(branchs);
 
 		JSONParser parser = new JSONParser();
 		Reader reader = new FileReader(nome);
@@ -52,31 +53,15 @@ public class teste2 {
 
 			JSONObject jsonObject4 = (JSONObject) jsonObject3.get(i);
 
-			Object jsonObj4 = (jsonObject4.get("data"));
+			Object jsonObj4 = (jsonObject4.get("type"));
 			// System.out.println("Data " + jsonObj4.toString());
 
-			JSONObject jsonObject5 = (JSONObject) jsonObj4;
-			if (jsonObj4.toString().contains("card")) {
-				Object jsonObj5 = (jsonObject5.get("card"));
-				// System.out.println("Card " + jsonObj5.toString());
-
-				JSONObject jsonObject6 = (JSONObject) jsonObj5;
-				if (jsonObj5.toString().contains("name")) {
-					Object jsonObj6 = (jsonObject6.get("name"));
-					// System.out.println("Name " + jsonObj6.toString());
-					// System.out.println(i);
-
-						if (jsonObj6.toString().contains(branchs)) {
-							if (teste.getBranch() == (null)) {
-								teste.setBranch(branchs);
-							}
-							if (!(teste.getBranch().contains((branchs)))) {
-								teste.setBranch(branchs);
-							}
-							teste.setAcoes(jsonObj4.toString());
-						//System.out.println(teste.acoes.size());
-					}
-				//	acoes.add(teste);
+			//JSONObject jsonObject5 = (JSONObject) jsonObj4;
+			System.out.println(jsonObj4.toString());
+			if (jsonObj4.toString().contains("updateCard")) {
+				if (jsonObject3.get(i).toString().contains(branchs)) {
+					//System.out.println("Aqui  " + jsonObject4.toString());
+					teste.setAcoes(jsonObject4.toString());
 				}
 			}
 
