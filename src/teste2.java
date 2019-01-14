@@ -1,36 +1,26 @@
 import java.io.FileReader;
-import java.io.Reader;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class teste {
+public class teste2 {
 
 	public static void main(String[] args) throws IOException, ParseException {
 
 		// PROD
-		// String nome = "/home/alexandre/gitHub/jsontrello/Files/QPczEdsF.json";
+		String nome = "/home/alexandre/gitHub/jsontrello/Files/QPczEdsF.json";
 
 		// DEV
-		String nome = "/home/alexandre/gitHub/jsontrello/Files/sgo8GdIi.json";
+		//String nome = "/home/alexandre/gitHub/jsontrello/Files/sgo8GdIi.json";
 
-		ArrayList<String> branchs = new ArrayList<>();
-		branchs.add("2018SD-0125");
-		branchs.add("2018SD-0121");
-		// String branch = "2016SD-0228-fase-2";
-		List<acoesBranch> acoes = new ArrayList<acoesBranch>();
+		String branchs = "2016SD-0134-fase-2";
+		//String branchs = "2018SD-0044-frente-11";
+	//	List<acoesBranch> acoes = new ArrayList<acoesBranch>();
 		acoesBranch teste = new acoesBranch();
 
 		JSONParser parser = new JSONParser();
@@ -76,28 +66,24 @@ public class teste {
 					// System.out.println("Name " + jsonObj6.toString());
 					// System.out.println(i);
 
-					for (int j = 0; j < branchs.size(); j++) {
-						if (jsonObj6.toString().contains(branchs.get(j))) {
+						if (jsonObj6.toString().contains(branchs)) {
 							if (teste.getBranch() == (null)) {
-								teste.setBranch(branchs.get(j));
+								teste.setBranch(branchs);
 							}
-							if (!(teste.getBranch().contains((branchs.get(j))))) {
-								teste.setBranch(branchs.get(j));
+							if (!(teste.getBranch().contains((branchs)))) {
+								teste.setBranch(branchs);
 							}
 							teste.setAcoes(jsonObj4.toString());
-						}
 						//System.out.println(teste.acoes.size());
 					}
-					acoes.add(teste);
+				//	acoes.add(teste);
 				}
 			}
 
 		}
-		System.out.println(acoes.size());
-		for(int z = 0; z < acoes.size();z ++) {
-			System.out.println(acoes.get(z).getBranch());
-			System.out.println(acoes.get(z).getAcoes());
-		}
+		System.out.println(teste.getBranch());
+		System.out.println(teste.getAcoes());
+		System.out.println("Total de acoes feitas na branch: " +teste.quantDisponibilizacoes());
 		//System.out.println(acoes.get(0).getBranch());
 		//System.out.println(acoes.get(0).getAcoes());
 		// System.out.println(acoes.getAcoes().size());
