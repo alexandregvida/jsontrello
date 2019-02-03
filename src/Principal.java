@@ -12,7 +12,7 @@ public class Principal {
 		
 		//String nome = "/home/alexandre/Downloads/QPczEdsF.json";
 		String nome = "/home/alexandre/Downloads/sgo8GdIi.json";
-	    String branch = "2016SD-0228-fase-2";
+	    String branch = "2018RP-000456";
 	    
 	    ArrayList<String> encontrados = new ArrayList<>(); 
 	 

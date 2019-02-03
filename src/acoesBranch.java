@@ -26,7 +26,7 @@ public class acoesBranch {
 		int quant = 0;
 		for (int i = 0; i < acoes.size(); i++) {
 			//if ((acoes.get(i).contains("listBefore")) && (acoes.get(i).contains("listAfter"))) {
-				if ((acoes.get(i).contains("\"QA\\/HML\"") || (acoes.get(i).contains("\"QA\"")))) {
+				if ((acoes.get(i).contains("listAfter")) && (acoes.get(i).contains("listBefore"))) {
 					quant++;
 					//System.out.println(acoes.get(i));
 				}

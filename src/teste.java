@@ -21,10 +21,10 @@ public class teste {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		// PROD
-		// String nome = "/home/alexandre/gitHub/jsontrello/Files/QPczEdsF.json";
+		 String nome = "/home/alexandre/gitHub/jsontrello/Files/QPczEdsF.json";
 
 		// DEV
-		String nome = "/home/alexandre/gitHub/jsontrello/Files/sgo8GdIi.json";
+		//String nome = "/home/alexandre/gitHub/jsontrello/Files/sgo8GdIi.json";
 
 		ArrayList<String> branchs = new ArrayList<>();
 		branchs.add("2018SD-0125");
