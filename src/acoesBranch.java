@@ -25,14 +25,22 @@ public class acoesBranch {
 	public int quantDisponibilizacoes() {
 		int quant = 0;
 		for (int i = 0; i < acoes.size(); i++) {
-			//if ((acoes.get(i).contains("listBefore")) && (acoes.get(i).contains("listAfter"))) {
-				if ((acoes.get(i).contains("listAfter")) && (acoes.get(i).contains("listBefore"))) {
-					quant++;
-					//System.out.println(acoes.get(i));
-				}
-			//}
+			// if ((acoes.get(i).contains("listBefore")) &&
+			// (acoes.get(i).contains("listAfter"))) {
+			// if ((acoes.get(i).contains("listAfter")) ||
+			// (acoes.get(i).contains("listBefore"))) {
+			if (acoes.get(i).contains(branch)) {
+				quant++;
+				// System.out.println(acoes.get(i));
+			}
+			// }
 		}
 		return quant;
+	}
+
+	public int quantiTotal() {
+		return acoes.size();
+
 	}
 
 	@Override
